@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://web.stanford.edu/~cdebs/GameOfLife/ -->
+<html lang="en" class="gr__web_stanford_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Game of Life</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./Help_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./Help_files/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./Help_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./Help_files/css" rel="stylesheet" type="text/css">
+    <link href="./Help_files/css(1)" rel="stylesheet" type="text/css">
+    <link href="./Help_files/css(2)" rel="stylesheet" type="text/css">
+    <link href="./Help_files/css(3)" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body id="page-top" class="index" data-gr-c-s-loaded="true">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#page-top">Conway's Game of Life</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="http://web.stanford.edu/~cdebs/GameOfLife/#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#history">History</a>
+                    </li>
+                     <li class="">
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#rules">Rules &amp; Patterns</a>
+                    </li>
+                     <li class="active">
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#simulator">Simulator</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#portfolio">Development</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#comppower">Computation</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#1D">1D</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#3D">3D</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#team">Applications</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://web.stanford.edu/~cdebs/GameOfLife/#references">References</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in" style="color:red">a discussion of</div>
+                <div class="intro-heading" style="color:red">The Game of Life</div>
+                <a href="http://web.stanford.edu/~cdebs/GameOfLife/#history" class="page-scroll btn btn-xl">begin</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="history">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">A Brief History</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;">The Game of Life was invented in 1970 by the British mathematician <b>John Horton Conway</b>. Conway developed an interest in a problem which was made evident in the 1940’s by mathematician <b>John von Neumann</b>, who aimed to find a hypothetical machine that had the ability to create copies of itself and was successful when he discovered a mathematical model for such a machine with very complicated rules on a rectangular grid. Thus, the Game of Life was Conway’s way of simplifying von Neumann’s ideas. It is the best-known example of a cellular automaton which is any system in which rules are applied to cells and their neighbors in a regular grid. Martin Gardner popularized the Game of Life by writing two articles for his column “Mathematical Games” in the journal Scientific American in 1970 and 1971.      
+                    <br><br>
+                    <div style="text-align:center">              
+                       <img src="./Help_files/john_conway.jpg">
+                       <img src="./Help_files/vonneumann.jpg">
+                       <br><br><b>John Conway</b> (left) and <b>John von Neumann</b> (right).
+                    </div>
+                  </h3> 
+                </div>
+                        </div>
+        </div>
+</section>
+ <section id="rules" class="bg-light-gray">
+     <div class="container">
+         <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Rules &amp; Patterns</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;"><br>
+                     <b>Fundamental Rules</b> <br><br>
+                     The game is designed around the following simple rules:<br><br>
+
+                     1) Any live cell with fewer than two live neighbors dies, as if caused by underpopulation.<br>
+                     2) Any live cell with more than three live neighbors dies, as if by overcrowding.<br>
+                     <div style="text-align:center">     
+                     <img src="./Help_files/dead.png"><br><br>
+                  </div>
+                     3) Any live cell with two or three live neighbors lives on to the next generation.<br>
+                     <div style="text-align:center">  
+                     <img src="./Help_files/livecell.png"><br><br>
+                  </div>
+                     4) Any dead cell with exactly three live neighbors becomes a live cell.<br>
+                     <div style="text-align:center">  
+                     <img src="./Help_files/deadcell.png"><br><br>
+                  </div>
+
+                     The operation of the game starts with an initial configuration on a two dimensional grid. This infinite square grid consists of cells with two possible states, alive or dead. Each cell has eight neighbors, namely the eight cells that touch it. The game operates in iterations, called ticks. Each tick applies the four rules of the game to every cell on the board simultaneously.<br><br><br>
+                     <b>Still Life</b> <br><br>
+                     These are stable patterns that do not change and can be used to build critical solid parts of complex patterns. These patterns stay in one state which enables them to store information or act as solid bumpers to stop other patterns or keep other unstable patterns stable. Examples of still life include: <br><br>
+                     1) <b>The Block</b><br>
+                     2) <b>The Boat</b><br>
+                     3) <b>The Loaf</b><br>
+                     4) <b>The Beehive</b><br><br>
+
+                     <div style="text-align:center">  
+                     <img src="./Help_files/block.png">
+                     <img src="./Help_files/boat.png">
+                     <img src="./Help_files/loaf.png">
+                     <img src="./Help_files/beehive.png"><br><br>
+                     <b> Block, Boat, Loaf, Beehive</b> (from left to right).<br><br>
+                  </div>
+                     <b>Oscillators</b> <br><br>
+                     These patterns are more complex and change over a specific number of ticks. They repeat their pattern infinitely. The basic oscillators have periods of two or three ticks, but complex oscillators have been discovered with periods of twenty or more ticks. These oscillators are very useful for setting off other reactions of bumping stable patterns to set off a chain reaction of instability. The most common period-2 oscillators include:<br><br>
+                     1) <b>The Blinker</b> <br>
+                     2) <b>The Beacon</b> <br>
+                     3) <b>The Toad</b> <br>
+                     4) <b>The Pulsar</b><br><br>
+                                          <div style="text-align:center">  
+                     <img src="./Help_files/blinker.gif">
+                     <img src="./Help_files/beacon.gif">
+                     <img src="./Help_files/toad.gif">
+                     <img src="./Help_files/pulsar.gif"><br><br>
+                     <b> Blinker, Beacon, Toad, Pulsar</b> (from left to right).<br><br>
+                  </div>
+                     <b>Gliders and Spaceships</b> <br><br>
+                     A spaceship is a pattern that moves, returning to the same configuration but shifted after a finite number of generations. The glider is an example of a simple spaceship and its generations each consist of five live cells. The glider has a period of four and moves diagonally one cell every four generations. It moves at one-quarter the speed of light. <br><br>
+                     Other examples of simple spaceships include lightweight, medium weight, and heavyweight spaceships. They each move in a straight line at half the speed of light.<br><br><br>
+                                          <div style="text-align:center">  
+                     <img src="./Help_files/glider.gif">&nbsp;&nbsp;&nbsp;
+                     <img src="./Help_files/lightweight.gif"><br><br>
+                     <b> Glider, Lightweight Spaceship</b> (from left to right).<br><br>
+                  </div>
+
+                     <b>Guns</b> <br><br>
+                     Guns are repeating patterns which produce a spaceship after a finite number of generations. The simplest gun, called the <b>Gosper glider gun</b>, produces a glider every 30 generations. This fascinating pattern was discovered in 1970 by Bill Gosper. Through careful analysis and experimental testing he developed a pattern which emitted a continuous stream of gliders.<br><br>
+                     Since 1970 researchers and freelance experimenters have discovered hundreds of new patterns and have built thousands of intricate machines and devices using these and other simple parts.<br><br>
+                     Theoretically the many different possibilities of these four simple rules allow the development of any kind of computing. A Turing machine has been implemented in Conway's Game of Life. There are hundreds of other amazing patterns.<br><br><br>
+
+                                          <div style="text-align:center">  
+                     <img src="./Help_files/glidergun.gif"><br><br>
+                     <b> Gosper Glider Gun.</b><br><br>
+                  </div>
+                     <b> Other patterns include:</b><br><br>
+
+                     1) <b>The Puffer Train or "Puffers".</b> These are moving patterns and this creation leaves a stable or oscillating debris behind at regular intervals.<br><br>
+<div style="text-align:center">  
+                     <img src="./Help_files/puffer.gif" width="90%"><br><br>
+                     <b> Puffer Train. </b><br><br>
+                  </div>
+                     2) <b>Rakes.</b> These are moving patterns that emit spaceships at regular intervals as they move.<br><br>
+                     <div style="text-align:center">  
+                     <img src="./Help_files/rakes.gif" width="90%"><br><br>
+                     <b> Rakes. </b><br><br>
+                  </div>
+
+                     3) <b>Breeder.</b> These are complicated oscillating patterns which leave behind guns at regular intervals. Unlike guns, puffers, and rakes, each with a linear growth rate, breeders have a quadratic growth rate.
+                     <div style="text-align:center">  
+                     <img src="./Help_files/breeder.gif" height="20%"><br><br>
+                     <b> Breeder. </b>
+                  </div>
+
+                     </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="simulator">
+     <div class="container">
+         <div class="row">
+                <div class="col-lg-12 text-center">              
+                     <h2 class="section-heading">Game of Life Simulator</h2>
+                     <div style="text-align:center">
+                        <iframe height="670px" width="80%" position="abosolute" src="./Help_files/saved_resource.html" scrolling="no"></iframe>
+                    
+                </div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Development of the Game</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;">The Game of Life is born out of Claude Shannon and John McCarthy’s Automata Studies. The book, which includes an essay on Turing machines, awakened in Conway a fascination with mechanisms that were capable of spontaneous motion.  And while other enthusiasts of automation in sixties dreamed of assembling self-replicating machines that would colonize Mars, Conway strove for fundamental simplicity. In fact, the Game of Life began as an attempt to simplify John von Neumann’s two-dimensional automated machine – an abstraction in which a square could be in one out of 29 possible states. What determined the state of a square, however, were the states of the surrounding four squares, which were also in any of the 29 states. The machine thus allowed for 20,155,149 (29^5) different configurations, making it in Conway’s eyes, “excessively complicated.” What he envisioned, instead, was a one-dimensional universal machine. <br><br>
+
+            Conway’s efforts to realize this dream began in 1965. That year, he assembled a team of graduate students at Cambridge with the express goal of designing a simple but universal automated machine. Conway referred to these machines as ‘mindless games’ and over the course of three years, Conway and his students came up with hundreds of games. Although the Game of Life is the most popular product to come out of this project, Conway got closer to his dream through other machines.<br><br>
+
+ 
+One of these machines is called <b>Fractran</b> (see image below). It is a one-dimensional universal machine - a single row of fractions – for which Conway wrote several programs. Among the most popular is one that produces the prime powers of two.<br><br>
+You start with the following 14 fractions and the input 2. The machine then multiplies each fraction by 2 until the product is an integer. The first product is 15. The machine then takes this integer and repeat the process, multiplying each fraction by 15 until the new product also results in an integer. By the 19th iteration, the machine produces a 4, by the 69th an 8 and by the 219th a 32. Conway, in other words, could program the Fractran to churn out the prime powers of 2.<br><br>
+                    <div style="text-align:center">    
+                        <img width="80%" src="./Help_files/fractran.jpg">
+                        <br><br><b>Fractran</b>
+                     </div>
+<br>
+Yet, despite its apparent simplicity, the Fractran has obvious defects. The shortness of the program is offset by the length of the computations. Getting to the hundredth prime in Conway’s program, for instance, takes a million operations. Thus, even with Fractran under his belt, Conway continued to invent mindless games, looking to make one that was less cumbersome and even more elegant. <br><br>
+And it is this obsession with simplicity that paved the way to Life. By 1970, Conway and his team and had been working on cellular automation for eighteen months and had tinkered with a myriad of rule-sets to design a machine that would produce configurations that grew, but not too quickly. Near the end of the process, however, Conway had cut back on his ambitions and settled on a two dimensional machine instead. At some point he’d even given up on the idea of a two-state machine.<br><br>
+Actresses and Bishops, for example, is a two dimensional, three-state predecessor to the Game of Life. Cells are not only full or empty but are also gendered. In this version, two bishops and an actress, or two actresses and a bishop, are needed for procreation. The former arrangement produces a baby actress while the latter results in a baby bishop. But if a cell is not in contact with at least one other cell of the opposite sex, it dies of sexual frustration. <br><br>
+Conway soon realized that gender was superfluous and abolished the rule. Then, he added the overpopulation rule and arrived at Life. <br><br>
+What followed after its creation was an effort to make a <b>taxonomy of Life creatures</b> (see image below). <br><br>
+                    <div style="text-align:center">    
+                        <img width="60%" src="./Help_files/taxonomyofcells.jpg">
+                        <br><br><b>Taxonomy of Life creatures.</b><br><br>
+                     </div>
+Although Conway began alone, he was soon joined by a slew of mathematicians from around the world. Martin Gardener popularized Life through his column in the Scientific American, and Conway used that avenue to incentivize enthusiasts to find certain configurations. Bill Gosper, for instance, won 50 dollars after finding a configuration that grew indefinitely, the “Gosper Gun.” It was also a reader of this journal who first programmed the simulation for Life. <br><br>
+By 1972 Conway had his abandoned formal work with Life with many questions still unanswered. Importantly, he had asserted, but not proven, that Life was universal. Advances in computing power and a sustained interest from the mathematical community resulted in a steady stream of discoveries. <br><br>
+Garden of Eden configurations, those which cannot be produced by any preceding configuration, are still a source of excitement for Life enthusiasts. The first of these configurations was found in 1971 by Roger banks, a discovery that set off a race to finding the smallest possible Garden of Eden. What makes the task particularly difficult is that determining whether a Garden of Eden exists is an undecidable problem. That is, there is no algorithm that can generate these types of configurations. The smallest one was discovered only recently, in 2011, and consists of 56 cells that fit in a 10x10 square. <br><br>
+</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="comppower">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Computational Power</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;">In the October 1970 issue of Scientific American, Martin Gardner popularized Conway’s Game of Life by describing the game’s capacity to “open up a whole new field of mathematical research, <b>the field of cellular automata</b>.” Many soon discovered the great power of cellular automata as <b>models of computation</b>. It was determined that cellular automata, as they appear in the Game of Life, have the same computational capacity as Turing machines. The <b>Church-Turing thesis</b> that states: <br><br>
+                        <div style="text-align:center">
+                        "No method of computation carried out by a mechanical process can be more powerful than a Turing machine."<br><br>
+                    </div>
+                    Therefore, as the Game of Life is Turing complete, it is one of the most powerful models of computation. In other words, no mechanical form of computation can solve a problem that a Turing machine or cellular automata cannot solve, given sufficient time and space.
+                        The following reasons lead researchers to determine the Game of Life has all the computational capability of Turing Machines, meaning it is <b>Turing complete</b>:<br><br>
+
+1) Turing Machines have the ability to <b>loop infinitely</b>. Therefore, because the Game of Life has the ability to simulate an infinite loop or infinite recursion in the form of a Gosper gun or the puffer, people became convinced that the Game of Life has the computational capability of a Turing machine. <br><br>
+<div style="text-align:center">  
+                     <img src="./Help_files/glidergun.gif"><br><br>
+                     <b> Gosper Glider Gun.</b><br><br>
+                     <img src="./Help_files/puffer.gif" width="90%"><br><br>
+                     <b> Puffer.</b><br><br>
+                  </div>
+2) A specific configuration of cellular automata called <b>Rule 110</b> that uses a cyclic tag system is known to be be Turing complete. Through a complex mathematical proof, Stephen Wolfram and his assistant Matthew Cook proved Rule 110 to be capable of supporting universal computation.<br><br><br>
+                  <div style="text-align:center">              
+                       <img src="./Help_files/rule110.gif">
+                       <br><br> 
+                    </div><br><br>
+
+3) The cellular formation of a “glider” can interact with other cellular automata to construct logic gates like AND, OR, and NOT. Therefore, it is possible to build a pattern of cellular automata that acts like a <b>finite state machine</b> using two counters. The formation that acts like a finite state machine has the same computation power as a universal Turing machine, also known as being Turing complete. This means that the Game of Life is as computationally powerful to any computer with unlimited memory and no time constraints.
+<div style="text-align:center">  
+                     <img src="./Help_files/glider.gif"><br><br>
+                     <b> Glider </b><br><br>
+                  </div>
+
+</h3>
+
+<!--scp -r HOMEPAGE cdebs@myth.stanford.edu:WWW-->
+                </div>
+            </div>
+         </div>
+   </section>
+   <section id="1D" class="bg-light-gray">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Generalization to 1D</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;">In a 1-dimensional Life, each cell only has two neighbors. Like in a 2-dimensional Life, the state of a cell in the next time-step depends on the states of its neighboring cells in the current state. Interestingly, we typically display 1-dimensional Life in a 2-dimensional grid, where the top row represents the pattern at time-step 0 (i.e. the initial configuration), the second from top row represents the pattern at time-step 1, and so on and so forth. As with the 2-dimensional Life, distinct rules typically lead to different variations.<br><br>
+ 
+We present here two examples of 1-Dimensional Game of Life. The first is called Rule 30. First, some terminologies. Let 0 represent a dead cell and 1 represent a live cell. For instance 101 represents a cell that is currently dead but is flanked by two live neighbors. Then the next state of the cellular automata, given the current pattern, is determined by the following pattern:<br><br>
+111: 0, 110: 0, 101: 0, 100: 1, 011: 1, 010: 1, 001: 1, 000: 0<br><br>
+<div style="text-align:center">     
+<img src="./Help_files/rule30.gif"><br><br>
+</div>
+The binary representation of the outcomes, in the way we have written it, is 0011110, which is of course 30 in decimal form. This explains why this particular variant of Life is called Rule 30. An interesting feature of Rule 30 is its chaotic nature. To be more precise, it displays sensitive dependence on initial conditions. For instance, two initial configurations that differ only in a small number of cells rapidly diverge (This follows from an interesting property of Rule 30: given any two initial configurations C and D that differ at position i, in the next step C and D will differ at position i+1. That this property holds is evident from the rules that govern Rule 30.) Moreover, the chaotic nature of Rule 30 can be exploited to generate random integers. For example, take an initial configuration where every cell except the cell at position c is alive at time 0, and consider the state of the cell at position c as we move from one time-step to another. This gives us a column of bits 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, as seen in the above image, and if we interpret the column as binary numbers, this gives us the seemingly random sequence 1, 3, 6, 13, etc.<br><br>
+Rule 90 is another variant of Life, and it is essentially based on the XOR-function. The next state of a cell at position i is determined by the states of its adjacent cells at position i-1 and position i+1. Explicitly, let x and y represent the states of the cells at position i-1 and position i+1 at the current time-step; note that x and y can each only be 0 or 1. Then, the next state of the cell at position i is given by x XOR y.<br><br>
+<div style="text-align:center">     
+<img src="./Help_files/rule90.gif"><br><br>
+</div>
+One interesting pattern that Rule 90 allows for emerges when we consider an initial configuration where every cell except the one at position c is dead. Then, taking column c as the “center” of the pattern, the resulting outcome resembles a Sierpinski triangle, as seen above.<br><br>
+</h3>
+</div>
+</div>
+</div>
+</section>
+<section id="3D">
+           <div class="container">
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Generalization to 3D</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;">In a 3-dimensional Life, each cell has 26 neighbors as opposed to 2 and 8 for 1-dimensional and 2-dimensional Life respectively. Possible variations of 3D Life abound, but most yield patterns that either expand too quickly or shrink too rapidly. Loosely speaking, one may define a valid 3D Life as one that loosely speaking satisfies the following two properties:<br><br>
+ 
+1.  Supports a glider gun.<br><br>
+2.  Exhibits bounded growth<br><br>
+ 
+First it is useful to introduce some terminologies. Let w and x be the minimum and maximum number of adjacent cells that need to be alive to sustain a cell that is currently alive in the next stage, and y and z be the minimum and maximum number of adjacent cells that need to be alive to make a cell that is currently dead alive in the next stage respectively. Then, given any dimension k, we can represent the rules governing any variation of Life succinctly as wxyz. For instance, Conway’s Game of Life is governed by the rule 2333.<br><br>
+
+In a 1987 paper, the researcher Carter Bays found that the only 3D Life variants that can be said to valid are 4555 and 5766. Comparing the Game of Life to these two variants, Bays made many interesting findings. For instance, he found that Life 5766 contains many initial configurations whose expansions are identical to their analogues’ expansions in the Game of Life. Take the following pattern in Life 5766 for example. Projecting it onto 2D forms a pattern that resembles the glider in the Game of Life:<br><br>
+
+
+<div style="text-align:center">     
+<img src="./Help_files/Glider3D.png" width="40%"> &nbsp;&nbsp;<b>vs.</b> &nbsp;&nbsp;&nbsp;&nbsp;<img src="./Help_files/newfigure1.gif" width="40%"> <br><br>
+<b> “An uncanny resemblance” </b>
+</div>
+
+</h3>
+                </div>
+            </div>
+            </div>
+        
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Practical Applications</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;"><br>
+                     Cellular automata yield a surprisingly diverse range of practical applications. We focus here on one particular example of a real-life application of cellular automata – the design of a public-key cryptosystem.<br><br>
+                     A public-key cryptosystem is a cryptographic protocol that relies on two keys – an enciphering key E, which is made public, and a deciphering key D, which is kept private. Such a system should contain two important properties:<br><br>
+                     <b>1)    Security.</b> For attackers who have no access to the private key, the protocol should be so designed such that it would take a prohibitively large amount of time to recover the plain text from the cipher text.<br><br>
+                     <b>2)    Signature.</b> The receiver should be able to tell who the sender is. In other words, if person A, say Alice, wants to send a message, she should be able to sign her message in a way that nobody but she could.<br><br><br>
+                                       <div style="text-align:center">              
+                       <img src="./Help_files/publickey.png">
+                       <br><br><b>Public-Key Crypotography.</b><br><br><br>
+                    </div>
+                     
+                     In the system, each piece of plain text consists of binary digit blocks of a certain length, say N. In turn, each set of, for example, k bits in the block can be viewed as an element of some ground set S. For instance, we can have a cryptosystem where each block contained 5 bits and each bit takes a value in a field of 2 elements.<br><br>
+ 
+                     Suppose now each block contains N bits and represents m elements of S. To satisfy the security requirement, we require an invertible function which maps Sm to Sm that satisfies the following conditions:<br><br>
+ 
+<b>a)    Easy to compute</b> (for enciphering)<br><br>
+<b>b)   Hard to obtain its inverse</b> without certain key pieces of information which only the receiver has access to (deterring would-be attackers)<br><br>
+ 
+The complexity of cellular automata lends itself nicely to applications in cryptography. In particular, cellular automaton rules that are invertible are prime candidates for the invertible function we require to construct a public-key cryptosystem. To succinctly represent the rules whilst preserving a large neighborhood-size, we can associate the ground set S with a mathematical structure such as a field or a ring. This way, addition and multiplication are well defined on S, and we can thus represent cellular automaton rules as polynomial functions.<br><br>
+ 
+Here is a sketch of how a cellular automaton cryptosystem might work. Let the ground set be a field. The enciphering key, E, is a composition of inhomogeneous and time-varying linear invertible rules which is made public (the observant reader might note that the fact that the rules are inhomogeneous and time-varying distinguishes the resulting cellular automaton from elementary cellular automata). The deciphering key, D, is the set of individual rules in the composite enciphering function.<br><br>
+ 
+The crucial factor that enables such a cellular automaton cryptosystem to work is the fact that it is extremely computationally expensive to unravel the original state from the cipher state without prior knowledge of the individual rules used in the composite enciphering function. This guarantees the security of the system.<br><br>
+ 
+Signing a message in our cryptosystem works in exactly the same way as signing a message in the RSA cryptosystem. All the sender has to do is to apply the secret decryption key D to her name and then include that coded signature at the end of her message. This way, when the receiver receives the message, he can simply use the public key E to decipher the coded signature and see if the name matches the presumed sender.
+</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Team Section -->
+    <section id="references">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">References</h2>
+                    <h3 class="section-subheading" style="font-family:Helvetica;font-size:16px; text-align:left;font-style: normal;">
+                        <b>History and Standard Life Patterns</b><br><br>
+
+Callahan, Paul. "What Is the Game of Life?" Math.com. Web. 9 Sept. 2015.<br>
+This source offers a brief overview of the game of Life including the rules, life patterns and background.<br><br>
+"Conway's Game of Life." Wikipedia. Wikimedia Foundation. Web. 09 Sept. 2015.<br>
+This source includes the Origins of the Game of Life as well the rules and examples of possible patterns.<br><br>
+
+Izhikevich, Eugene M. "Game of Life." Scholarpedia. Web. 9 Sept. 2015.<br>
+This source is an overview of the rules, history, patterns, variations and implications of the Game of Life.<br><br>
+
+Bellos, Alex. "The Game of Life: A Beginner's Guide." The Guardian. Web. 9 Sept. 2015.<br>
+Interview with John Conway about the origins of the Game of Life.<br><br>
+
+"What Is Life and Cellular Automata?" What Is Life and Cellular Automata? Web. 09 Sept. 2015.<br>
+Describes the history of the Game of Life as well as the rules of the game.<br><br>
+
+"Experiment Garden." Conway's Game of Life. Web. 09 Sept. 2015.<br>
+Description of the different types of Life patterns such as Still lives, Oscillators, Gliders and Spaceships.<br><br>
+
+Roberts, Siobhan. Genius at Play: The Curious Mind of John Horton Conway at Work. N.p.: Bloomsbury, 2015. Print.<br>
+A biography of Conway’s life. Provides insights into the process of creating Life, especially from a non-technical perspective. <br><br>
+
+Wainwright, Robert. Conway’s Game of Life: Early Personal Recollections. Game of Life Cellular Automata. Ed. Andrew Adamatzky. N.p.: Springer London, 2010. 11-16. Print.<br>
+A paper written by one of the early Life enthusiasts. It documents the author’s attempt to program Life and gives a detailed account of the circumstances that lead to the first discoveries of patterns. <br><br> <br>
+
+
+<b>Real-life Applications of Cellular Automata</b><br><br>
+
+Wolfram, Stephen. "Random Sequence Generation by Cellular Automata." Advances in Applied Mathematics 7 (1986): 123-169. Web. 9 Sept. 2015.<br>
+In this paper, Wolfram explores how 1-dimensional cellular automata can be used to generate random integer sequences. <br><br>
+
+Guan, Puhua. "Cellular Automaton Public-Key Cryptosystem." Complex Systems1 (1987): 51-57. Web. 9 Sept. 2015.<br>
+In this paper, Guan discusses how cellular automata can be used to design a public-key cryptosystem. <br><br><br>
+
+<b>Why cellular automata are as powerful as Turing machines as a model of computation</b><br><br>
+
+"Conway's Game of Life." Wikipedia. Wikimedia Foundation, n.d. Web. 09 Sept. 2015.<br>
+Gliders can interact with other objects to create useful elements, such as a counter. Similarly, one can build AND, OR, and NOT logic gates using gliders. It is possible to build a finite state machine connected to two counters. Therefore, interactions between cellular automata can lead to the construction of Turing Machines.<br><br>
+
+Gardner, Martin. "The Fantastic Combinations of John Conway's New Solitaire Game "life"." Scientific American Oct. 1970: 120-23. Web. 09 Sept. 2015.<br>
+Through this article, Gardner popularized Conway’s Game of Life. Gardner describes how the Game of Life opened the door to “a whole new field of mathematical research, the field of cellular automata.”<br><br>
+
+Kun, Jeremy. "Turing Machines and Conway's Dreams." Web log post. Math ∩ Programming. N.p., 30 June 2011. Web. 09 Sept. 2015.<br>
+Researchers were able to begin to understand that the Game of Life could be Turing-complete because the Game of Life can loop infinitely. <br><br>
+
+Rendell, Paul. Turing Machine Universality of the Game of Life. Thesis. University of the West of England, 2014. Print.<br>
+These sources by Dr. Paul Rendell at the University of the West of England’s Centre of Unconventional Computing detail the construction of a Turing Machine within the Game of Life.<br><br>
+
+"Rule 110." Wikipedia. Wikimedia Foundation, n.d. Web. 09 Sept. 2015.<br>
+A specific configuration of cellular automata called Rule 110 that is known to be be Turing complete. Matthew Cook proved Rule 110 to be capable of supporting universal computation.<br><br><br>
+
+<b>1-Dimensional Game of Life</b><br><br>
+
+"Rule 30." Wolfram MathWorld. Web. 9 Sept. 2015. <br>
+This page illustrates the mathematical details behind Rule 30, a variant of 1-Dimensional Life. <br><br>
+
+"Rule 90." Wolfram MathWorld. Web. 9 Sept. 2015.<br>
+This page illustrates the mathematical details behind Rule 90, a variant of 1-Dimensional Life.<br><br>
+
+<b>3-Dimensional Game of Life</b><br><br>
+
+Bays, Carter. "Candidates for the Game of Life in Three Dimensions." Complex Systems1 (1987): 373-400. Web. 9 Sept. 2015.<br>
+In this paper, Bays studies two particular 3-Dimensional Life, Life 4555 and Life 5766, which are well-behaved and 
+display many similarities with Conway's Game of Life.
+
+</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="./Help_files/jquery.js.download"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./Help_files/bootstrap.min.js.download"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="./Help_files/jquery.easing.min.js.download"></script>
+    <script src="./Help_files/classie.js.download"></script>
+    <script src="./Help_files/cbpAnimatedHeader.js.download"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="./Help_files/jqBootstrapValidation.js.download"></script>
+    <script src="./Help_files/contact_me.js.download"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="./Help_files/agency.js.download"></script>
+
+
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
