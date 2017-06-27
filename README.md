@@ -8,3 +8,4 @@ Just uploded it to see how GitHub works.
 Possible Additions:
   Save Game and Load
   Some kind of a scoring system
+  Better Graphics
